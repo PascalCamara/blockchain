@@ -54,7 +54,11 @@ class Block {
     }
 
     mine(newBlock) {
+        console.log("mining ...")
+        let t0 = Date.now();
         this.add(newBlock)
+        let t1 = Date.now();
+        console.log("new block mined ! " + (t1 - t0) + " milliseconds.")
     }
 
     privateMine() {
@@ -102,4 +106,4 @@ blockA.mine(blockB)
 blockB.mine(blockC)
 blockA.mine(blockD)
 
-blockA.print()
+console.log(blockA)
